@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Գրաբար ⟷ Աշխարհաբար Թարգմանիչ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@400;600;700&family=Noto+Sans+Armenian:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-hy">Ա</span>
+      </div>
+      <div>
+        <h1>Գրաբար ⟷ Աշխարհաբար</h1>
+        <p class="tagline">Հայկազեան · Նայիրի · Պաւղոս Գոճանեան բառարաններ</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="direction-bar">
+      <button class="dir-btn active" id="btn-ga" onclick="setDir('grabar-ashkharhabar')">
+        Գրաբար → Աշխարհաբար
+      </button>
+      <button class="swap-btn" onclick="swapDir()" title="Փոխանակել">⇄</button>
+      <button class="dir-btn" id="btn-ag" onclick="setDir('ashkharhabar-grabar')">
+        Աշխարհաբար → Գրաբար
+      </button>
+    </div>
+
+    <div class="panels">
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-lang" id="src-label">Գրաբար</span>
+          <button class="clear-btn" onclick="clearAll()" title="Մաքրել">✕</button>
+        </div>
+        <textarea id="src-text" placeholder="Գրէ՛ Գրաբարէն..." oninput="onInput()"></textarea>
+        <div class="char-count" id="char-count">0 / 2000</div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-lang" id="tgt-label">Աշխարհաբար</span>
+          <button class="copy-btn" onclick="copyResult()" title="Պատճենել" id="copy-btn" style="display:none">⧉ Պատճ.</button>
+        </div>
+        <div class="output-wrap">
+          <div id="output" class="output placeholder-text">Թարգմանութիւնը կը յայտնուի այստեղ…</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="translate-btn" id="translate-btn" onclick="translate()">
+        Թարգմանել
+      </button>
+    </div>
+
+    <div class="dicts">
+      <span class="dict-chip">📖 Հայկազեան բառարան</span>
+      <span class="dict-chip">📖 Նայիրի</span>
+      <span class="dict-chip">📖 Պաւղոս Գոճանեան</span>
+      <span class="dict-chip coming">＋ ուրիշներ շուտով</span>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Powered by me · Բառարաններ՝ Հայկազեան, Նայիրի, Պաւղոս Գոճանեան</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
